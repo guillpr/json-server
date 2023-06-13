@@ -4,10 +4,8 @@ const path = require('path')
 
 const server = jsonServer.create()
 const router = jsonServer.router(path.join(__dirname, 'db.json'))
-const middlewares = jsonServer.defaults()
-jsonServer.use(cors({
-  origin:'*'
-}));
+const middlewares = jsonServer.defaults({noCors:true})
+
 
 server.use(cors())
 server.use(jsonServer.bodyParser)
