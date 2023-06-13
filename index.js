@@ -10,10 +10,6 @@ server.use(cors())
 server.use(jsonServer.bodyParser)
 server.use(middlewares)
 server.use(router)
-server.unableCors({
-  origin='*',
-  methods:'GET,POST'
-})
 
 server.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
